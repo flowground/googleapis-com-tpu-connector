@@ -1,0 +1,254 @@
+{
+    "title": "Cloud TPU",
+    "description": "TPU API provides customers with access to Google TPU technology.",
+    "docsUrl": "https://cloud.google.com/tpu/",
+    "url": "https://api.apis.guru/v2/specs/googleapis.com/tpu/v1/swagger.json",
+    "envVars": {
+        "OAUTH_CLIENT_ID": {
+            "description": "OAuth Client ID"
+        },
+        "OAUTH_CLIENT_SECRET": {
+            "description": "OAuth Client Secret"
+        }
+    },
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "https://tpu.googleapis.com/",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            },
+            "Oauth2": {
+                "label": "Oauth 2.0 authentication",
+                "viewClass": "OAuthFieldView"
+            }
+        },
+        "oauth2": {
+            "client_id": "{{OAUTH_CLIENT_ID}}",
+            "client_secret": "{{OAUTH_CLIENT_SECRET}}",
+            "auth_uri": "https://accounts.google.com/o/oauth2/auth"
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "tpu_projects_locations_operations_delete": {
+            "main": "./lib/actions/tpu_projects_locations_operations_delete.js",
+            "title": "Deletes a long-running operation. This method indicates that the client is\nno longer interested in the operation result. It does not cancel the\noperation. If the server doesn't support this method, it returns\n`google.rpc.Code.UNIMPLEMENTED`.",
+            "description": "Deletes a long-running operation. This method indicates that the client is\nno longer interested in the operation result. It does not cancel the\noperation. If the server doesn't support this method, it returns\n`google.rpc.Code.UNIMPLEMENTED`.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/tpu_projects_locations_operations_delete.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "tpu_projects_locations_operations_get": {
+            "main": "./lib/actions/tpu_projects_locations_operations_get.js",
+            "title": "Gets the latest state of a long-running operation.  Clients can use this\nmethod to poll the operation result at intervals as recommended by the API\nservice.",
+            "description": "Gets the latest state of a long-running operation.  Clients can use this\nmethod to poll the operation result at intervals as recommended by the API\nservice.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/tpu_projects_locations_operations_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "tpu_projects_locations_list": {
+            "main": "./lib/actions/tpu_projects_locations_list.js",
+            "title": "Lists information about the supported locations for this service.",
+            "description": "Lists information about the supported locations for this service.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/tpu_projects_locations_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "tpu_projects_locations_operations_list": {
+            "main": "./lib/actions/tpu_projects_locations_operations_list.js",
+            "title": "Lists operations that match the specified filter in the request. If the\nserver doesn't support this method, it returns `UNIMPLEMENTED`.\n\nNOTE: the `name` binding allows API services to override the binding\nto use different resource name schemes, such as `users/*/operations`. To\noverride the binding, API services can add a binding such as\n`\"/v1/{name=users/*}/operations\"` to their service configuration.\nFor backwards compatibility, the default name includes the operations\ncollection id, however overriding users must ensure the name binding\nis the parent resource, without the operations collection id.",
+            "description": "Lists operations that match the specified filter in the request. If the\nserver doesn't support this method, it returns `UNIMPLEMENTED`.\n\nNOTE: the `name` binding allows API services to override the binding\nto use different resource name schemes, such as `users/*/operations`. To\noverride the binding, API services can add a binding such as\n`\"/v1/{name=users/*}/operations\"` to their service configuration.\nFor backwards compatibility, the default name includes the operations\ncollection id, however overriding users must ensure the name binding\nis the parent resource, without the operations collection id.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/tpu_projects_locations_operations_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "tpu_projects_locations_operations_cancel": {
+            "main": "./lib/actions/tpu_projects_locations_operations_cancel.js",
+            "title": "Starts asynchronous cancellation on a long-running operation.  The server\nmakes a best effort to cancel the operation, but success is not\nguaranteed.  If the server doesn't support this method, it returns\n`google.rpc.Code.UNIMPLEMENTED`.  Clients can use\nOperations.GetOperation or\nother methods to check whether the cancellation succeeded or whether the\noperation completed despite cancellation. On successful cancellation,\nthe operation is not deleted; instead, it becomes an operation with\nan Operation.error value with a google.rpc.Status.code of 1,\ncorresponding to `Code.CANCELLED`.",
+            "description": "Starts asynchronous cancellation on a long-running operation.  The server\nmakes a best effort to cancel the operation, but success is not\nguaranteed.  If the server doesn't support this method, it returns\n`google.rpc.Code.UNIMPLEMENTED`.  Clients can use\nOperations.GetOperation or\nother methods to check whether the cancellation succeeded or whether the\noperation completed despite cancellation. On successful cancellation,\nthe operation is not deleted; instead, it becomes an operation with\nan Operation.error value with a google.rpc.Status.code of 1,\ncorresponding to `Code.CANCELLED`.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/tpu_projects_locations_operations_cancel.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "tpu_projects_locations_nodes_reimage": {
+            "main": "./lib/actions/tpu_projects_locations_nodes_reimage.js",
+            "title": "Reimages a node's OS.",
+            "description": "Reimages a node's OS.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/tpu_projects_locations_nodes_reimage.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "tpu_projects_locations_nodes_start": {
+            "main": "./lib/actions/tpu_projects_locations_nodes_start.js",
+            "title": "Starts a node.",
+            "description": "Starts a node.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/tpu_projects_locations_nodes_start.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "tpu_projects_locations_nodes_stop": {
+            "main": "./lib/actions/tpu_projects_locations_nodes_stop.js",
+            "title": "Stops a node.",
+            "description": "Stops a node.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/tpu_projects_locations_nodes_stop.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "tpu_projects_locations_acceleratorTypes_list": {
+            "main": "./lib/actions/tpu_projects_locations_acceleratorTypes_list.js",
+            "title": "Lists accelerator types supported by this API.",
+            "description": "Lists accelerator types supported by this API.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/tpu_projects_locations_acceleratorTypes_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "tpu_projects_locations_nodes_list": {
+            "main": "./lib/actions/tpu_projects_locations_nodes_list.js",
+            "title": "Lists nodes.",
+            "description": "Lists nodes.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/tpu_projects_locations_nodes_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "tpu_projects_locations_nodes_create": {
+            "main": "./lib/actions/tpu_projects_locations_nodes_create.js",
+            "title": "Creates a node.",
+            "description": "Creates a node.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/tpu_projects_locations_nodes_create.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "tpu_projects_locations_tensorflowVersions_list": {
+            "main": "./lib/actions/tpu_projects_locations_tensorflowVersions_list.js",
+            "title": "List TensorFlow versions supported by this API.",
+            "description": "List TensorFlow versions supported by this API.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/tpu_projects_locations_tensorflowVersions_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}
